@@ -60,11 +60,12 @@ We will now install cplex inside a docker. First, you need an installer for cple
 
 If you have any issues with IBM website (it can happen ...), just retry later or contact IBM support.
 
-Now that you have the installer for Linux-64, you need to install it within a container:
+Now that you have the installer for Linux-64 downloaded, you need to install it within a container:
 1. Run a container with docplex (the python framework for cplex) and jupyterhub:
 ```bash
 docker run -v "/path/to/cplex/installer/directory:/home/jovyan/cplex" --name empty-docplex-notebook legraina/empty-docplex-notebook
 ```
+You must give the absolute path to the directory where the cplex installer has been downloaded on your computer (instead of "/path/to/cplex/installer/directory") in order to be able to access the installer from within the container.
 2. Enter the container:
 ```bash
 docker exec -it empty-docplex-notebook bash
