@@ -74,7 +74,15 @@ docker exec -it empty-docplex-notebook bash
 ```bash
 ./cplex/COSCE128LIN64.bin
 ```
-You will then answer to the questions asked by the script. You need to give the path for the installation after accepting the license, YOU MUST ENTER /home/jovyan/CPLEX_Studio.
+You will then answer to the questions asked by the script:
+  1. Choose your langage. Press enter to choose the default one (english). ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/9_langage.png)
+  2. Press enter to continue. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/10_introduction.png)
+  3. Enter "1" and then press enter to agree to the license. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/11_license.png)
+  4. Enter "/home/jovyan/CPLEX_Studio" for the installation path and then press enter. YOU MUST USE THIS PATH TO GET A WORKING CONTAINER WITH DOCPLEX. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/12_path.png)
+  5. Enter "Y" and then press enter to confirm the path. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/13_path_confirmation.png)
+  6. Press a last time enter to conform the path and the installation. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/14_path_confirmed.png)
+  7. Press enter to start the installation, it will take a while. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/15_installation.png)
+  8. Press enter to exit the installer. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/16_exit.png)
 4. Once the installation is finished, you finally need to install cplex in your python environment:
 ```bash
 cd CPLEX_Studio/cplex/python/3.6/x86-64_linux/ && python3 setup.py install
