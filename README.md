@@ -37,7 +37,7 @@ Note that the token will be different.
 
 Finally, open your favorite browser and go to http://127.0.0.1:8888/?token=8f2df45e526c81bdbfe17e3a9d1da64e4a6edf6573e7cdca (replace the token with yours).
 
-You are now on jupyter notebook: you can create new notebook and be ready to code.
+You are now on jupyter notebook: you can create new notebook and be ready to code. You can kill the process when you have finished .
 
 ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/basic-notebook.png)
 
@@ -61,12 +61,12 @@ We will now install cplex inside a docker. First, you need an installer for cple
 If you have any issues with IBM website (it can happen ...), just retry later or contact IBM support.
 
 Now that you have the installer for Linux-64 downloaded, you need to install it within a container:
-1. Run a container with docplex (the python framework for cplex) and jupyterhub:
+1. Run the container "legraina/empty-docplex-notebook" with docplex (the python framework for cplex) and jupyterhub. We give the name "empty-docplex-notebook" to this container:
 ```bash
-docker run -v "/path/to/cplex/installer/directory:/home/jovyan/cplex" --name empty-docplex-notebook legraina/empty-docplex-notebook
+docker run --rm -v "/path/to/cplex/installer/directory:/home/jovyan/cplex" --name empty-docplex-notebook legraina/empty-docplex-notebook
 ```
 You must give the absolute path to the directory where the cplex installer has been downloaded on your computer (instead of "/path/to/cplex/installer/directory") in order to be able to access the installer from within the container.
-2. Enter the container:
+2. Leave the container running, open a new terminal tab or window, and then enter the container:
 ```bash
 docker exec -it empty-docplex-notebook bash
 ```
@@ -92,13 +92,13 @@ Now that cplex is installed in your container and ready to be used, we will save
 ```bash
 docker commit empty-docplex-notebook docplex-notebook
 ```
-You have now an image "docplex-notebook" ready to be used. You may finally launch the your jupyter server and play with docplex.
+You have now an image "docplex-notebook" ready to be used. You may now kill the container empty-docplex-notebook that you have started on 1. You can finally launch the your jupyter server and play with docplex.
 ```bash
-docker run -v "/path/to/some/exercices:/home/jovyan/work/exercises" -p "8888:8888" --name docplex-notebook docplex-notebook
+docker run --rm -v "/path/to/some/exercices:/home/jovyan/work/exercises" -p "8888:8888" --name docplex-notebook docplex-notebook
 ```
 You may add a volume with the command "-v": the idea is to load some existing notebooks within jupytherhub, for example some exercises. The volume command links the directory "/path/to/some/exercises" to the directory "/home/jovyan/work/exercises" inside the container. You need to use absolute paths for this command. Note that the volume is mounted inside the container, it means that if you add any file in the directory on your system or in the container, you will be able to access it on the other system immediately.
 
-You can now connect to the jupytherhub and try to run the files that are either preloaded in the "examples" directory or the ones in the mounted directory "exercises".
+You can now connect to the jupytherhub (with the token given in the terminal output) and try to run the files that are either preloaded in the "examples" directory or the ones in the mounted directory "exercises".
 
 ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/docplex-notebook.png)
 
