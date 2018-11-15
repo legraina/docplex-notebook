@@ -66,14 +66,17 @@ Now that you have the installer for Linux-64 downloaded, you need to install it 
 docker run --rm -v "/path/to/cplex/installer/directory:/home/jovyan/cplex" --name empty-docplex-notebook legraina/empty-docplex-notebook
 ```
 You must give the absolute path to the directory where the cplex installer has been downloaded on your computer (instead of "/path/to/cplex/installer/directory") in order to be able to access the installer from within the container.
+
 2. Leave the container running, open a new terminal tab or window, and then enter the container:
 ```bash
 docker exec -it empty-docplex-notebook bash
 ```
+
 3. Install cplex (for 12.8 for example):
 ```bash
 ./cplex/COSCE128LIN64.bin
 ```
+
 You will then answer to the questions asked by the script:
   1. Choose your language. Press enter to choose the default one (english). ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/9_language.png)
   2. Press enter to continue. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/cplex/10_introduction.png)
