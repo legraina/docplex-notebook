@@ -19,7 +19,10 @@ First, you need to install docker. This software is managing all the images for 
 7. You will be redirected on the download page for mac (if you are downloading the mac client). ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/docker/7_ce_mac.png)
 8. You may now login with your new account. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/docker/8_login.png)
 9. You can finally download the client. ![alt-text](https://raw.githubusercontent.com/legraina/docplex-notebook/master/screenshots/docker/9_download.png)
-10. Just install docker and then launch it.
+10. Just install docker and then launch it. If you need more information for the installation process, please refer to the official documentation:
+    * For Mac: https://docs.docker.com/docker-for-mac/
+    * For Windows: https://docs.docker.com/docker-for-windows/install/
+    * For Ubuntu: https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
 Once docker has started, we will test the system with a basic notebook.
 
