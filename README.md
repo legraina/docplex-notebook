@@ -68,7 +68,7 @@ Now that you have the installer for Linux-64 downloaded, you need to install it 
 ```bash
 docker run --rm -v "/path/to/cplex/installer/directory:/home/jovyan/cplex" --name empty-docplex-notebook legraina/empty-docplex-notebook
 ```
-You must give the absolute path to the directory where the cplex installer has been downloaded on your computer (instead of "/path/to/cplex/installer/directory") in order to be able to access the installer from within the container.
+You must give the absolute path to the directory where the cplex installer has been downloaded on your computer (instead of "/path/to/cplex/installer/directory") in order to be able to access the installer from within the container. For Windows, your firewall will block the volume, see this documentation: https://success.docker.com/article/error-a-firewall-is-blocking-file-sharing-between-windows-and-the-containers.
 
 2. Leave the container running, open a new terminal tab or window, and then enter the container:
 ```bash
